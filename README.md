@@ -73,6 +73,52 @@ Durante essa etapa, você pode orientar a IA para três entregas principais:
 Finalize seu projeto criando um **repositório no GitHub** (pode ser um **fork** deste).  
 No README do seu repositório, inclua:
 
+PRD refinado no Copilot web:
+
+PRD – Aplicativo de Finanças Pessoais com Conversação e Design Universal
+
+1. Contexto
+O projeto consiste em criar um aplicativo de organização de finanças pessoais que funciona por meio de conversas em linguagem natural. O app deve ser intuitivo, acessível e utilizável pelo maior número de pessoas possível, seguindo princípios de Design Universal. A proposta é reduzir barreiras de entrada e facilitar o controle financeiro sem formulários complexos.
+
+2. Problema
+A maioria dos aplicativos de finanças exige muito preenchimento manual e pouca personalização, o que dificulta o uso contínuo. Além disso, muitos não consideram adequadamente as necessidades de usuários diversos, incluindo limitações motoras, cognitivas, visuais ou baixa familiaridade tecnológica. É necessário um app mais simples, acessível e humano, que reduza o esforço e ofereça apoio real.
+
+3. Público-Alvo
+Pessoas que desejam iniciar ou retomar o controle financeiro de maneira prática, intuitiva e acessível. Inclui usuários iniciantes, pessoas com pouca familiaridade com tecnologia e indivíduos com diversas necessidades de acessibilidade.
+
+4. Funcionalidades-Chave
+1. Registro de gastos via chat em linguagem natural.
+2. Classificação automática de transações.
+3. Definição e acompanhamento de metas financeiras.
+4. Agente Financeiro com recomendações personalizadas.
+5. Relatórios simples, claros e personalizados.
+6. Interface baseada em Design Universal:
+   - Navegação intuitiva.
+   - Linguagem clara.
+   - Alto contraste.
+   - Possibilidade de ajuste de tamanho de texto.
+   - Elementos visuais compreensíveis para diferentes perfis.
+   - Compatibilidade com recursos nativos de acessibilidade do sistema.
+
+5. Entregável da IA
+A IA deve gerar:
+- Um plano de MVP com as principais telas, fluxos e recursos essenciais.
+- Requisitos mínimos que garantam conformidade com Design Universal.
+- Um esboço de validação inicial com usuários diversos.
+- Linguagem didática e acessível, em português.
+
+6. Descrição Didática do Conceito de Design Universal
+Design Universal é a abordagem de projeto que busca criar produtos utilizáveis pelo maior número possível de pessoas, sem a necessidade de adaptações específicas. A ideia é que o design já nasça inclusivo, considerando uma ampla diversidade de capacidades, idades, experiências e necessidades.
+
+Os sete princípios fundamentais são:
+1. Uso Equitativo: o produto deve ser útil para diferentes perfis.
+2. Flexibilidade no Uso: permitir diferentes formas de interação.
+3. Uso Simples e Intuitivo: fácil de entender, independentemente da experiência.
+4. Informação Perceptível: informações claras e acessíveis.
+5. Tolerância a Erros: minimizar riscos e facilitar correções.
+6. Baixo Esforço Físico: operação eficiente e confortável.
+7. Tamanho e Espaço Adequados: elementos acessíveis e com boa área de toque.
+
 - Seu **prompt final** (PRD);  
 - Prints ou pequenos vídeos das interações com a IA;  
 - Um resumo do que o seu **App de Finanças Pessoais** faz;  
