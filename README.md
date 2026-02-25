@@ -73,6 +73,8 @@ Durante essa etapa, você pode orientar a IA para três entregas principais:
 Finalize seu projeto criando um **repositório no GitHub** (pode ser um **fork** deste).  
 No README do seu repositório, inclua:
 
+```Markdown
+
 PRD refinado no Copilot web:
 
 PRD – Aplicativo de Finanças Pessoais com Conversação e Design Universal
@@ -119,14 +121,219 @@ Os sete princípios fundamentais são:
 6. Baixo Esforço Físico: operação eficiente e confortável.
 7. Tamanho e Espaço Adequados: elementos acessíveis e com boa área de toque.
 
-- Seu **prompt final** (PRD);  
-- Prints ou pequenos vídeos das interações com a IA;  
-- Um resumo do que o seu **App de Finanças Pessoais** faz;  
-- Uma breve **reflexão sobre o processo**:
-  - O que funcionou bem?  
-  - O que não funcionou como o esperado?  
-  - O que aprendeu sobre conversar com IAs?
+```
+Interações com o Lovable:
 
+Crie um app de finanças Pessoais com base no seguinte PRD (Product Requirements Documents).
+
+tentei criar uma meta chamada Reserva de Emergencia, mas ela não apareceu do jeito que eu queria.
+
+Sim (Quer que eu adicione uma tela de relatórios com gráficos e extratos detalhado das transações)
+
+Fiz essa solicitação no Copilot finalizando:
+
+Por favor, crie esse app usando somente html, css e javascript eu quero somente um site estático para prototipa:
+
+Resp: 
+```
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Organizador de Finanças Pessoais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+    .chat-box {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      height: 300px;
+      overflow-y: auto;
+    }
+    .input-area {
+      display: flex;
+      width: 100%;
+      max-width: 600px;
+    }
+    .input-area input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+    }
+    .input-area button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #27ae60;
+      color: #fff;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    .reports, .goals {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .message {
+      margin: 0.5rem 0;
+    }
+    .user {
+      text-align: right;
+      color: #2980b9;
+    }
+    .bot {
+      text-align: left;
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Organizador de Finanças Pessoais</h1>
+    <p>Design Universal: acessível e simples para todos</p>
+  </header>
+  <main>
+    <div class="chat-box" id="chatBox">
+      <div class="message bot">Olá! Sou seu Agente Financeiro. Me conte seus gastos.</div>
+    </div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Digite seu gasto...">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+    <div class="goals">
+      <h2>Metas Financeiras</h2>
+      <p>Exemplo: Poupar R$200 este mês.</p>
+    </div>
+    <div class="reports">
+      <h2>Relatórios</h2>
+      <p>Total registrado: <span id="total">R$0</span></p>
+    </div>
+  </main>
+
+  <script>
+    let total = 0;
+
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chatBox = document.getElementById('chatBox');
+      const message = input.value.trim();
+      if (message === "") return;
+
+      // Exibe mensagem do usuário
+      const userMsg = document.createElement('div');
+      userMsg.className = "message user";
+      userMsg.textContent = message;
+      chatBox.appendChild(userMsg);
+
+      // Simula categorização automática
+      let valor = 0;
+      const match = message.match(/(\d+)/);
+      if (match) {
+        valor = parseFloat(match[1]);
+        total += valor;
+        document.getElementById('total').textContent = "R$" + total;
+      }
+
+      // Resposta do "Agente Financeiro"
+      const botMsg = document.createElement('div');
+      botMsg.className = "message bot";
+      if (valor > 0) {
+        botMsg.textContent = "Gasto registrado de R$" + valor + ". Continue acompanhando!";
+      } else {
+        botMsg.textContent = "Entendi. Pode me dizer o valor do gasto?";
+      }
+      chatBox.appendChild(botMsg);
+
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
+
+```
+
+# App de Organização de Finanças Pessoais
+
+## Resumo do PRD
+
+**Objetivo:**  
+Criar um aplicativo que permita organizar finanças pessoais por meio de conversas em linguagem natural, evitando formulários complexos e planilhas.
+
+**Problema Resolvido:**  
+- Apps atuais exigem muita entrada manual.  
+- Pouca personalização e recomendações práticas.  
+- Experiência burocrática e pouco intuitiva.  
+
+**Público-Alvo:**  
+- Pessoas iniciantes na organização financeira.  
+- Usuários que buscam praticidade e acessibilidade.  
+
+**Funcionalidades-Chave:**  
+1. Registro de gastos via chat.  
+2. Classificação automática das transações.  
+3. Definição e acompanhamento de metas financeiras.  
+4. Agente Financeiro com dicas personalizadas.  
+5. Relatórios simples e visuais.  
+6. Design Universal para garantir acessibilidade e boa experiência para todos.  
+
+**Entregável da IA (MVP):**  
+- Principais telas: chat, metas, relatórios.  
+- Recursos: NLP, categorização automática, notificações, padrões de acessibilidade.  
+- Validação inicial: testes com usuários diversos, medição de engajamento e coleta de feedback.  
+
+---
+
+## Protótipo Visual
+
+Abaixo está uma prévia visual do protótipo estático gerado com HTML, CSS e JavaScript e uma foto gerada do Copilot:
+
+![Protótipo do App de Finanças](sandbox:/mnt/data/graphic_art/94499b65-7d2a-414d-90ac-a604215f4b6c.png)
+
+<img width="386" height="371" alt="image" src="https://github.com/user-attachments/assets/4baaf868-21d9-4e9d-b413-2366f94c8742" />
+
+
+---
+
+## Observações
+
+Este protótipo é estático e serve para validar a experiência de uso com base no PRD. Ele pode ser expandido com funcionalidades reais, integração com NLP e melhorias de acessibilidade conforme o projeto evolui.
+
+- Uma breve **reflexão sobre o processo**:
+  - O que funcionou bem?
+    O refinamento do PRD previamente feito no Copilot ajudou muito, mas os créditos do lovable acabaram com poucas interações.
+  - O que não funcionou como o esperado?
+    Funcionou praticamente tudo, somente tentei criar uma meta chamada Reserva de Emergencia, mas ela não apareceu do jeito que eu queria.
+  - O que aprendeu sobre conversar com IAs?
+    Aprendi que é praticamente conversar com um professor, tudo que você solicita da melhor forma, é respondido.
 > [!TIP]
 > Publique seu repositório e compartilhe o link na plataforma da DIO! Sua entrega é a prova de que você domina o raciocínio de Vibe Coding, mesmo sem escrever uma única linha de código.
 
